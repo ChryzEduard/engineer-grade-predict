@@ -99,7 +99,7 @@ else:
 
 predict_call = st.button("Predict")
 
-model = pickle.load(open("model.pkl", "rb"))
+model = pickle.load(open("rf_student_grade_model.pkl", "rb"))
 print(model)
 
 # def load_eng_model():
@@ -117,4 +117,5 @@ if predict_call:
     # Make predictions
     main_predictions = model.predict(main_data_x)
     percent_prediction = main_predictions * 100
-    st.subheader(f"Prediction is: {percent_prediction}%")
+    prediction_str = "{:.0f}".format(percent_prediction[0])
+    st.subheader(f"Prediction is: {prediction_str}% probability of passing the board exam")
