@@ -4,7 +4,7 @@ import numpy as np
 
 
 def load_eng_model():
-    with open("rf_student_model2.pkl", "rb") as file:
+    with open("model.pkl", "rb") as file:
         eng_model = pickle.load(file)
     return eng_model
 
